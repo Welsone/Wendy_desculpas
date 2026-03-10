@@ -1,0 +1,391 @@
+* { margin: 0;
+     padding: 0; 
+     box-sizing: border-box; 
+     font-family: 'Arial', sans-serif; 
+     text-decoration: none;
+    scroll-behavior: smooth;
+}
+     
+
+    .body {
+  background: #f7f3ee; /* creme muito suave */
+  color: #222;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  min-height:100vh;
+  text-align:center;
+}
+    
+
+ .poem{
+  margin-top:40px;
+  padding: 10px;
+
+  border-radius:15px;
+  text-align: center;
+  animation: fadePoem 3s forwards;
+  z-index: 1000;
+}
+
+@keyframes fadePoem{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+
+.poem h2{
+  margin-bottom:15px;
+  color:#ffe066;
+
+  font-style:italic;
+  z-index: 1000;
+}
+
+.poem blockquote{
+  font-style:italic;
+  line-height:1.8;
+  z-index: 1000;
+
+}
+
+.memory-page{
+  position:relative;
+  width:100%;
+  min-height:800px;
+  z-index: 1;
+}
+.photo{
+  position:absolute;
+
+  width:170px;
+  height:170px;
+
+  object-fit:cover;
+
+  border-radius:12px;
+  border:4px solid white;
+
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+
+  z-index:1;
+
+  opacity:0;
+
+  animation:dropPhoto 1s ease forwards;
+
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease,
+              filter 0.4s ease;
+
+  filter: grayscale(100%) brightness(0.9);
+  cursor: pointer;
+}
+
+.photo:hover{
+
+  transform: scale(1.25) rotate(0deg);
+
+  z-index:10;
+
+  box-shadow:0 18px 40px rgba(0,0,0,0.25);
+
+  filter: grayscale(0%) brightness(1.05);
+}
+
+@keyframes dropPhoto{
+
+  0%{
+    transform:translateY(-250px) scale(0.7);
+    opacity:0;
+  }
+
+  70%{
+    transform:translateY(20px) scale(1.05);
+  }
+
+  100%{
+    opacity:1;
+  }
+
+}
+
+.p1{
+  top:30px;
+  left:6%;
+  transform:rotate(-8deg);
+  animation-delay:0.2s;
+}
+
+.p2{
+  top:40px;
+  right:6%;
+  transform:rotate(7deg);
+  animation-delay:0.4s;
+}
+
+.p3{
+  top:220px;
+  left:3%;
+  transform:rotate(-6deg);
+  animation-delay:0.6s;
+}
+
+.p4{
+  top:220px;
+  right:4%;
+  transform:rotate(6deg);
+  animation-delay:0.8s;
+}
+
+.p5{
+  bottom:220px;
+  left:7%;
+  transform:rotate(-5deg);
+  animation-delay:1s;
+}
+
+.p6{
+  bottom:220px;
+  right:7%;
+  transform:rotate(5deg);
+  animation-delay:1.2s;
+}
+
+.p7{
+  bottom:80px;
+  left:25%;
+  transform:rotate(-7deg);
+  animation-delay:1.4s;
+}
+
+.p8{
+  bottom:80px;
+  right:25%;
+  transform:rotate(7deg);
+  animation-delay:1.6s;
+}
+
+/* Tablet - até 1024px */
+@media (max-width: 1024px) {
+  .memory-page {
+    min-height: 600px;
+  }
+
+  .photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .p1 {
+    top: 20px;
+    left: 5%;
+  }
+
+  .p2 {
+    top: 20px;
+    right: 5%;
+  }
+
+  .p3 {
+    top: 200px;
+    left: 2%;
+  }
+
+  .p4 {
+    top: 200px;
+    right: 3%;
+  }
+
+  .p5 {
+    bottom: 200px;
+    left: 5%;
+  }
+
+  .p6 {
+    bottom: 200px;
+    right: 5%;
+  }
+
+  .p7 {
+    bottom: 60px;
+    left: 22%;
+  }
+
+  .p8 {
+    bottom: 60px;
+    right: 22%;
+  }
+
+  .poem {
+    margin-top: 25px;
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .poem h2 {
+    font-size: 1.8rem;
+  }
+
+  .poem blockquote {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile - até 767px */
+@media (max-width: 767px) {
+  .memory-page {
+    min-height: 450px;
+  }
+
+  .photo {
+    width: 110px;
+    height: 110px;
+    border: 3px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    z-index: -1;
+    filter: grayscale(0%) brightness(1);
+  }
+
+  .photo:hover {
+    transform: scale(1.2) rotate(0deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    z-index: 0;
+  }
+
+  .p1 {
+    top: 15px;
+    left: 4%;
+  }
+
+  .p2 {
+    top: 15px;
+    right: 4%;
+  }
+
+  .p3 {
+    top: 160px;
+    left: 1%;
+  }
+
+  .p4 {
+    top: 160px;
+    right: 2%;
+  }
+
+  .p5 {
+    bottom: 160px;
+    left: 4%;
+  }
+
+  .p6 {
+    bottom: 160px;
+    right: 4%;
+  }
+
+  .p7 {
+    bottom: 50px;
+    left: 20%;
+  }
+
+  .p8 {
+    bottom: 50px;
+    right: 20%;
+  }
+
+  .poem {
+    margin-top: 20px;
+    padding: 12px;
+    max-width: 95%;
+  }
+
+  .poem h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .poem blockquote {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+/* Celular pequeno - até 480px */
+@media (max-width: 480px) {
+  .memory-page {
+    min-height: 380px;
+  }
+
+  .photo {
+    width: 90px;
+    height: 90px;
+    border: 2px solid white;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    z-index: -1;
+    filter: grayscale(0%) brightness(1);
+  }
+
+  .photo:hover {
+    transform: scale(1.15) rotate(0deg);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    z-index: 0;
+  }
+
+  .p1 {
+    top: 10px;
+    left: 3%;
+  }
+
+  .p2 {
+    top: 10px;
+    right: 3%;
+  }
+
+  .p3 {
+    top: 130px;
+    left: 1%;
+  }
+
+  .p4 {
+    top: 130px;
+    right: 1%;
+  }
+
+  .p5 {
+    bottom: 130px;
+    left: 3%;
+  }
+
+  .p6 {
+    bottom: 130px;
+    right: 3%;
+  }
+
+  .p7 {
+    bottom: 40px;
+    left: 18%;
+  }
+
+  .p8 {
+    bottom: 40px;
+    right: 18%;
+  }
+
+  .poem {
+    margin-top: 15px;
+    padding: 10px;
+    max-width: 98%;
+  }
+
+  .poem h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .poem blockquote {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
